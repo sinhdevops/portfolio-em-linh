@@ -1,13 +1,13 @@
-﻿{
+{
     "source":  "https://portfon.framer.website/",
     "capturedRoutes":  19,
     "generatedAt":  "2026-10-01T17:00:30.4192121Z",
     "counts":  {
-                   "downloaded":  305,
+                   "downloaded":  304,
                    "failed":  0,
                    "skipped":  23,
                    "blocked":  0,
-                   "bytes":  34738766
+                   "bytes":  34719101
                },
     "assets":  [
                    {
@@ -547,7 +547,6 @@
                                      "runtime-import:LwMtHzKZ2.BufwYBdD.mjs",
                                      "runtime-import:mAINC27VQ.DkY1yasr.mjs",
                                      "runtime-import:motion.Mzjlg0Y5.mjs",
-                                     "runtime-import:PX9hIOIVM.Gw9HU0kP.mjs",
                                      "runtime-import:qXlyKSgp4jWheDsku5B_lfQg3_mTeIUqJaDKAHgo_z4.CxDFay8v.mjs",
                                      "runtime-import:script_main.BuJGdq4U.mjs",
                                      "runtime-import:shared-lib.BQu46o7H.mjs",
@@ -1506,7 +1505,6 @@
                                      "runtime-import:lMP0HQbin.Bui0v-xs.mjs",
                                      "runtime-import:LwMtHzKZ2.BufwYBdD.mjs",
                                      "runtime-import:mAINC27VQ.DkY1yasr.mjs",
-                                     "runtime-import:PX9hIOIVM.Gw9HU0kP.mjs",
                                      "runtime-import:qXlyKSgp4jWheDsku5B_lfQg3_mTeIUqJaDKAHgo_z4.CxDFay8v.mjs",
                                      "runtime-import:script_main.BuJGdq4U.mjs",
                                      "runtime-import:shared-lib.BQu46o7H.mjs",
@@ -1692,36 +1690,7 @@
                                  ],
                        "reason":  null
                    },
-                   {
-                       "url":  "https://framerusercontent.com/sites/37jqoww1T028UmawId8vp3/PX9hIOIVM.Gw9HU0kP.mjs",
-                       "localPath":  "/assets/sites/37jqoww1T028UmawId8vp3/PX9hIOIVM.Gw9HU0kP.mjs",
-                       "kind":  "script",
-                       "status":  "downloaded",
-                       "bytes":  19665,
-                       "pages":  [
-                                     "404",
-                                     "aether-mobile-experience",
-                                     "blogs",
-                                     "brand-strategy",
-                                     "contact-us",
-                                     "design-principles",
-                                     "home",
-                                     "lessons-for-designers-popular",
-                                     "lessons-for-designers",
-                                     "lumora-beauty-rebrand",
-                                     "my-portfolio",
-                                     "nova-saas-platform",
-                                     "orion-dashboard-interface",
-                                     "product-design",
-                                     "user-experience",
-                                     "ux-insights",
-                                     "virex-marketing-website",
-                                     "visual-systems",
-                                     "zenith-e-commerce-experience",
-                                     "runtime-import:script_main.BuJGdq4U.mjs"
-                                 ],
-                       "reason":  null
-                   },
+                   
                    {
                        "url":  "https://framerusercontent.com/images/eYYeHlsHeQ8sANA01cnM5c0t9VE.png?width=3200\u0026height=2400",
                        "localPath":  "/assets/images/eYYeHlsHeQ8sANA01cnM5c0t9VE_887a075d07.png",
@@ -1943,7 +1912,6 @@
                                      "runtime-import:LwMtHzKZ2.BufwYBdD.mjs",
                                      "runtime-import:mAINC27VQ.DkY1yasr.mjs",
                                      "runtime-import:Ogh0qWsP7.BTJ84qzA.mjs",
-                                     "runtime-import:PX9hIOIVM.Gw9HU0kP.mjs",
                                      "runtime-import:qXlyKSgp4jWheDsku5B_lfQg3_mTeIUqJaDKAHgo_z4.CxDFay8v.mjs",
                                      "runtime-import:rRow4nrRaSBuVkIi16KsTHQfgBanYAlnnkiGLvPwOzQ.CQrPEDpP.mjs",
                                      "runtime-import:script_main.BuJGdq4U.mjs",
@@ -4284,7 +4252,6 @@
                                      "runtime-import:motion.Mzjlg0Y5.mjs",
                                      "runtime-import:N0c0DAsDG3lKBFvVLE7UeJoZzujbs6Pha-uUwHkReHE.uXQwLmQs.mjs",
                                      "runtime-import:Ogh0qWsP7.BTJ84qzA.mjs",
-                                     "runtime-import:PX9hIOIVM.Gw9HU0kP.mjs",
                                      "runtime-import:qXlyKSgp4jWheDsku5B_lfQg3_mTeIUqJaDKAHgo_z4.CxDFay8v.mjs",
                                      "runtime-import:r-wSCUDVWLSwTzmM76TqAUmjha8djuVtnSlr3Y35XZs.wFUEeHC7.mjs",
                                      "runtime-import:react.CWOg5Z1e.mjs",
