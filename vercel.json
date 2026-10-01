@@ -4,11 +4,7 @@
   "outputDirectory": "outputs/portfon-clone",
   "functions": {
     "api/serve.js": {
-      "includeFiles": [
-        "outputs/portfon-clone/assets-manifest.json",
-        "outputs/portfon-clone/assets/cms/**",
-        "outputs/portfon-clone/404/index.html"
-      ]
+      "includeFiles": "outputs/portfon-clone/**"
     }
   },
   "rewrites": [
