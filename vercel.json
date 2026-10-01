@@ -1,0 +1,44 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": "outputs/portfon-clone",
+  "functions": {
+    "api/serve.js": {
+      "includeFiles": [
+        "outputs/portfon-clone/assets-manifest.json",
+        "outputs/portfon-clone/assets/cms/**",
+        "outputs/portfon-clone/404/index.html"
+      ]
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/assets/cms/:path*",
+      "destination": "/api/serve?path=:path*"
+    },
+    {
+      "source": "/404",
+      "destination": "/api/serve?page=404"
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact-us/index.html"
+    },
+    {
+      "source": "/my-portfolio",
+      "destination": "/my-portfolio/index.html"
+    },
+    {
+      "source": "/my-portfolio/:slug",
+      "destination": "/my-portfolio/:slug/index.html"
+    },
+    {
+      "source": "/blogs",
+      "destination": "/blogs/index.html"
+    },
+    {
+      "source": "/blogs/:slug",
+      "destination": "/blogs/:slug/index.html"
+    }
+  ]
+}
