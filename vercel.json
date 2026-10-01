@@ -9,6 +9,10 @@
   },
   "rewrites": [
     {
+      "source": "/assets/images/:path*",
+      "destination": "/api/serve?path=images/:path*"
+    },
+    {
       "source": "/assets/cms/:path*",
       "destination": "/api/serve?path=:path*"
     },

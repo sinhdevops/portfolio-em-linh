@@ -6,6 +6,16 @@ const mimeTypes = {
   ".html": "text/html; charset=utf-8",
   ".framercms": "application/octet-stream",
 };
+let manifestPromise;
+
+function readManifest() {
+  if (!manifestPromise) {
+    manifestPromise = fs
+      .readFile(path.join(siteRoot, "assets-manifest.json"), "utf8")
+      .then((text) => JSON.parse(text.replace(/^\uFEFF/, "")));
+  }
+  return manifestPromise;
+}
 
 function send(res, status, contentType, body, method) {
   res.statusCode = status;
@@ -31,6 +41,79 @@ module.exports = async function handler(req, res) {
   }
 
   const relativeCmsPath = String(req.query.path || "").replace(/^\/+/, "");
+
+  if (relativeCmsPath.startsWith("images/")) {
+    try {
+      const manifest = await readManifest();
+      const requestedSourcePath = `/${relativeCmsPath}`;
+      const requestUrl = new URL(req.url || "/", "http://localhost");
+      const requestedParams = new Map();
+
+      for (const [key, value] of requestUrl.searchParams) {
+        if (key !== "path" && key !== "page") requestedParams.set(key, value);
+      }
+      for (const [key, value] of Object.entries(req.query || {})) {
+        if (key === "path" || key === "page" || value == null) continue;
+        requestedParams.set(key, String(Array.isArray(value) ? value[0] : value));
+      }
+
+      const candidates = manifest.assets.filter((asset) => {
+        if (asset.status !== "downloaded") return false;
+        try {
+          return new URL(asset.url).pathname === requestedSourcePath;
+        } catch {
+          return false;
+        }
+      });
+
+      if (!candidates.length) return res.status(404).end("Image not captured");
+
+      const exact = candidates.find((asset) => {
+        const params = new URL(asset.url).searchParams;
+        return params.size === requestedParams.size &&
+          [...params].every(([key, value]) => requestedParams.get(key) === value);
+      });
+
+      const requestedWidth = Number(requestedParams.get("width")) || 0;
+      const selected = exact || candidates
+        .map((asset) => {
+          const sourceParams = new URL(asset.url).searchParams;
+          let score = 0;
+          for (const [key, value] of requestedParams) {
+            if (sourceParams.get(key) === value) score += 100;
+            else if (sourceParams.has(key)) score -= 100;
+          }
+          for (const key of sourceParams.keys()) {
+            if (!requestedParams.has(key)) score -= 10;
+          }
+          const sourceWidth = Number(sourceParams.get("width")) || 0;
+          if (requestedWidth && sourceWidth) score -= Math.abs(requestedWidth - sourceWidth) / 1000;
+          if (!requestedWidth) score += Number(asset.bytes) / 1_000_000_000;
+          return { asset, score };
+        })
+        .sort((a, b) => b.score - a.score)[0].asset;
+
+      const imagePath = path.resolve(siteRoot, selected.localPath.replace(/^[/\\]+/, ""));
+      if (!imagePath.startsWith(`${siteRoot}${path.sep}`)) return res.status(404).end("Not found");
+
+      const body = await fs.readFile(imagePath);
+      const extension = path.extname(imagePath).toLowerCase();
+      const contentType = {
+        ".avif": "image/avif",
+        ".gif": "image/gif",
+        ".jpeg": "image/jpeg",
+        ".jpg": "image/jpeg",
+        ".png": "image/png",
+        ".svg": "image/svg+xml; charset=utf-8",
+        ".webp": "image/webp",
+      }[extension] || "application/octet-stream";
+
+      return send(res, 200, contentType, body, req.method);
+    } catch {
+      return res.status(500).end("Unable to serve captured image");
+    }
+  }
+
   const cmsPath = `/cms/${relativeCmsPath}`;
   const rawRange = Array.isArray(req.query.range)
     ? req.query.range.join(",")
@@ -42,8 +125,7 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const manifestText = await fs.readFile(path.join(siteRoot, "assets-manifest.json"), "utf8");
-    const manifest = JSON.parse(manifestText.replace(/^\uFEFF/, ""));
+    const manifest = await readManifest();
     const chunks = [];
 
     for (const requestedRange of requestedRanges) {
