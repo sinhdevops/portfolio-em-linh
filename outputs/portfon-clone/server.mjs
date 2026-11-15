@@ -1,4 +1,5 @@
 import { createServer } from "node:http";
+import { watch } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -8,6 +9,16 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const port = Number(process.env.PORT || 3000);
 const manifestText = (await readFile(path.join(root, "assets-manifest.json"), "utf8")).replace(/^\uFEFF/, "");
 const assetManifest = JSON.parse(manifestText);
+const liveReloadClients = new Set();
+let liveReloadTimer;
+const liveReloadScript = `<script>
+(() => {
+  if (window.__portfonLiveReload) return;
+  window.__portfonLiveReload = true;
+  const events = new EventSource("/__live");
+  events.addEventListener("change", () => window.location.reload());
+})();
+</script>`;
 const replaceFramerCdn = (input) => {
   const source = Buffer.from("https://framerusercontent.com");
   const local = Buffer.from("http://127.0.0.1:3000/assets/");
@@ -51,6 +62,18 @@ createServer(async (req, res) => {
     search = requestUrl.search;
   } catch {
     res.writeHead(400).end("Bad request");
+    return;
+  }
+
+  if (pathname === "/__live") {
+    res.writeHead(200, {
+      "Cache-Control": "no-cache, no-transform",
+      Connection: "keep-alive",
+      "Content-Type": "text/event-stream; charset=utf-8",
+    });
+    res.write(": connected\n\n");
+    liveReloadClients.add(res);
+    req.on("close", () => liveReloadClients.delete(res));
     return;
   }
 
@@ -106,7 +129,11 @@ createServer(async (req, res) => {
 
   let status = pathname.replace(/\/+$/, "") === "/404" ? 404 : 200;
   try {
-    const body = responseBody || await readFile(file);
+    let body = responseBody || await readFile(file);
+    if (path.extname(file).toLowerCase() === ".html") {
+      const html = body.toString("utf8");
+      body = Buffer.from(html.replace(/<\/body>/i, `${liveReloadScript}\n</body>`));
+    }
     res.writeHead(status, { "Content-Type": types[path.extname(file).toLowerCase()] || "application/octet-stream" });
     res.end(body);
   } catch {
@@ -121,4 +148,14 @@ createServer(async (req, res) => {
   }
 }).listen(port, "127.0.0.1", () => {
   console.log(`Portfon clone available at http://localhost:${port}`);
+});
+
+watch(root, { recursive: true }, (_eventType, filename) => {
+  if (filename && filename.toString() === "server.mjs") return;
+  clearTimeout(liveReloadTimer);
+  liveReloadTimer = setTimeout(() => {
+    for (const client of liveReloadClients) {
+      if (!client.destroyed) client.write("event: change\ndata: update\n\n");
+    }
+  }, 120);
 });

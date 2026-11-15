@@ -66,7 +66,16 @@ module.exports = async function handler(req, res) {
         }
       });
 
-      if (!candidates.length) return res.status(404).end("Image not captured");
+      if (!candidates.length) {
+        const localImage = path.resolve(siteRoot, "assets", relativeCmsPath);
+        const imageRoot = path.join(siteRoot, "assets", "images") + path.sep;
+        if (!localImage.startsWith(imageRoot)) return res.status(404).end("Not found");
+        const body = await fs.readFile(localImage).catch(() => null);
+        if (!body) return res.status(404).end("Image not captured");
+        const extension = path.extname(localImage).toLowerCase();
+        const contentType = { ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp", ".svg": "image/svg+xml", ".avif": "image/avif" }[extension] || "application/octet-stream";
+        return send(res, 200, contentType, body, req.method);
+      }
 
       const exact = candidates.find((asset) => {
         const params = new URL(asset.url).searchParams;

@@ -6,3 +6,8 @@
 /assets/**
 /work
 /work/**
+/deploy-mylink
+/deploy-mylink/**
+/mylink-deployment.tar.gz
+/deploy-vercel
+/deploy-vercel/**
