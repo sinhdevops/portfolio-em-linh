@@ -1,0 +1,12 @@
+.wrapper {
+  position: relative;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: var(--color-navy);
+  opacity: 0;
+  filter: blur(110px);
+  pointer-events: none;
+}

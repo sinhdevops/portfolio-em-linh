@@ -1,0 +1,242 @@
+.about {
+  display: flex;
+  justify-content: center;
+  padding: 120px var(--gutter) 60px;
+  overflow: clip;
+  background: var(--color-page);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: var(--container);
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.titleAndButton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  max-width: 750px;
+}
+
+.title {
+  color: var(--color-ink);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 52.8px;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 46px;
+}
+
+/* Light frame around the portrait (full width on tablet, portrait-sized elsewhere). */
+.portraitFrame {
+  display: flex;
+  flex: none;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+
+.portrait {
+  position: relative;
+  width: 404px;
+  height: 492px;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.portrait img {
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 24px;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+
+.satisfaction {
+  gap: 90px;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardTitle {
+  color: var(--color-black);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 27.6px;
+  letter-spacing: -0.06em;
+  white-space: pre;
+}
+
+.cardLabel {
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 27.2px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: var(--color-chip);
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30.6px;
+}
+
+.star {
+  width: 26px;
+  height: 29px;
+  color: var(--color-star);
+}
+
+.avatars {
+  position: absolute;
+  right: 10px;
+  bottom: -4px;
+  width: 139px;
+  height: auto;
+}
+
+.strengths {
+  gap: 37px;
+  justify-content: center;
+}
+
+.strengthsTitle {
+  max-width: 224px;
+  white-space: normal;
+  text-wrap: balance;
+}
+
+.chips {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 177px;
+}
+
+.tiltedChip {
+  position: absolute;
+  top: 26.9px;
+  left: 198.3px;
+  translate: -50% -50%;
+  rotate: -60deg;
+}
+
+/* Tablet */
+@media (max-width: 1199.98px) {
+  .about {
+    padding: 80px var(--gutter) 40px;
+  }
+
+  .titleWrapper {
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .title {
+    font-size: 35px;
+    line-height: 38.5px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .cards {
+    width: 100%;
+  }
+}
+
+/* Phone */
+@media (max-width: 767.98px) {
+  .about {
+    padding: 60px var(--gutter) 30px;
+  }
+
+  .content {
+    gap: 40px;
+  }
+
+  .titleWrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .titleAndButton {
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 31px;
+    line-height: 34.1px;
+  }
+
+  .bottom {
+    gap: 46px;
+  }
+
+  .portrait {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 0.821138;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card {
+    flex: none;
+  }
+}

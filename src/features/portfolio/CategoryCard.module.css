@@ -1,0 +1,167 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 24px;
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--color-black);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 35.2px;
+  letter-spacing: -0.06em;
+}
+
+.number {
+  color: var(--color-muted-number);
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 63.8px;
+  letter-spacing: -0.01em;
+  white-space: pre;
+  transition: color 0.5s linear;
+}
+
+.body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 300px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 656px;
+}
+
+.summary {
+  max-width: 480px;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 27.2px;
+  text-wrap: balance;
+}
+
+.media {
+  position: relative;
+  flex: 1 1 0;
+  max-width: 436px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+  scale: 1.05;
+  transition: scale 0.5s linear;
+}
+
+.imageWrapper img {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--color-black);
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+.card:hover .number {
+  color: var(--color-ink);
+}
+
+.card:hover .imageWrapper {
+  scale: 1;
+}
+
+.card:hover .overlay {
+  opacity: 0.4;
+}
+
+@media (max-width: 1199.98px) {
+  .card {
+    gap: 29px;
+  }
+
+  .number {
+    font-size: 35px;
+    line-height: 38.5px;
+  }
+
+  .body {
+    height: auto;
+    min-height: 287px;
+  }
+
+  .media {
+    height: 287px;
+  }
+
+  .text {
+    flex: 1 1 0;
+    gap: 32px;
+    width: auto;
+  }
+
+  .summary {
+    max-width: 368px;
+  }
+
+  .media {
+    max-width: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card {
+    gap: 24px;
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .number {
+    font-size: 31px;
+    line-height: 34.1px;
+  }
+
+  .body {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    height: auto;
+  }
+
+  .text {
+    flex: none;
+    gap: 24px;
+  }
+
+  .summary {
+    max-width: 480px;
+  }
+
+  .media {
+    flex: none;
+    max-width: none;
+    height: 250px;
+    border-radius: 16px;
+  }
+}

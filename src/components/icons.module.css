@@ -1,0 +1,7 @@
+.sparkle {
+  display: block;
+  flex: none;
+  background-color: currentColor;
+  mask: url('/images/icons/sparkle.svg') center / contain no-repeat;
+  -webkit-mask: url('/images/icons/sparkle.svg') center / contain no-repeat;
+}

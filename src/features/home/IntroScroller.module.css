@@ -1,0 +1,60 @@
+.intro {
+  position: relative;
+}
+
+/* Counter cards: start at the right edge of the hero (desktop only). */
+.stats {
+  position: absolute;
+  top: 524px;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  width: var(--container);
+  padding-bottom: 31px;
+  translate: -50% 0;
+  pointer-events: none;
+}
+
+.stat {
+  position: relative;
+  z-index: 9;
+  width: 336px;
+  pointer-events: auto;
+}
+
+/* Tilted "Web design" chips that drop in around the portrait. */
+.tags {
+  position: absolute;
+  top: 214px;
+  left: 322px;
+  right: 322px;
+  z-index: 10;
+  height: 222px;
+  pointer-events: none;
+}
+
+.tag {
+  position: absolute;
+}
+
+.tagLeft {
+  top: 171px;
+  left: 70px;
+  translate: -50% -50%;
+}
+
+.tagRight {
+  top: 107px;
+  right: 87px;
+  translate: 0 -50%;
+}
+
+@media (max-width: 1199.98px) {
+  .stats,
+  .tags {
+    display: none;
+  }
+}

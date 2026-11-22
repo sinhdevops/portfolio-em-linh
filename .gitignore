@@ -1,31 +1,27 @@
-# Local browser captures and source asset staging
-/.playwright-mcp/
-/assets/
-/work/
+# Dependencies
+/node_modules
 
-# Vercel local metadata
-/.vercel/
-
-# Dependencies and build output
-/node_modules/
+# Next.js
 /.next/
-/dist/
 /out/
+next-env.d.ts
+*.tsbuildinfo
 
-# Local environment files
-.env
-.env.*
+# Vercel
+.vercel
+
+# Environment variables (keep .env.example)
+.env*
 !.env.example
 
-# Logs and OS/editor files
+# Logs
 *.log
 npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
+
+# OS / editor
 .DS_Store
 Thumbs.db
 desktop.ini
 /.vscode/
 /.idea/
-.vercel
-.env*
+/.claude/
