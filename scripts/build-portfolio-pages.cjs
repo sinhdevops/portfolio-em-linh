@@ -4,6 +4,8 @@ const path = require('node:path');
 const vm = require('node:vm');
 const site = path.resolve(__dirname, '../outputs/portfon-clone');
 const runtime = fs.readFileSync(path.join(site, 'web-project-cards.js'), 'utf8');
+// Data keys stay the original Framer slugs; pages now live at clearer URLs.
+const dirs = { 'lumora-beauty-rebrand': 'web-design', 'virex-marketing-website': 'design-system', 'nova-saas-platform': 'ai-film-creation-tools', 'aether-mobile-experience': 'app-design' };
 const routes = ['lumora-beauty-rebrand', 'virex-marketing-website', 'nova-saas-platform', 'aether-mobile-experience'];
 const oldTitles = {
   'virex-marketing-website': 'Virex Marketing Website',
@@ -27,15 +29,15 @@ for (const slug of routes) {
       return elements[selector] ||= { textContent: '' };
     },
     getElementById: () => ({}),
-    createElement: () => ({ setAttribute() {}, querySelector: () => ({ addEventListener() {} }) }),
+    createElement: () => ({ setAttribute() {}, addEventListener() {}, querySelector: () => ({ addEventListener() {}, dataset: {} }) }),
   };
   vm.runInNewContext(runtime, {
-    document, location: { pathname: '/my-portfolio/' + slug }, URL,
+    document, location: { pathname: '/my-portfolio/' + dirs[slug] }, URL,
     MutationObserver: class { observe() {} },
   });
   if (!root.innerHTML.includes('See details')) throw new Error('No cards rendered for ' + slug);
 
-  const file = path.join(site, 'my-portfolio', slug, 'index.html');
+  const file = path.join(site, 'my-portfolio', dirs[slug], 'index.html');
   let html = fs.readFileSync(file, 'utf8');
   html = html.replace(/<template shadowrootmode="open" data-portfolio-ssr>[^]*?<\/template>/g, '');
   html = html.replace(/(<div class="framer-14c157h"[^>]*>)/, '$1<template shadowrootmode="open" data-portfolio-ssr>' + root.innerHTML + '</template>');
@@ -55,12 +57,12 @@ for (const slug of routes) {
     const oldCopy = oldDescriptions[slug];
     if (tag === 'p' && className === 'framer-29zcyb') html = html.replaceAll(oldCopy, value);
   }
-  if (heading) {
+  if (heading && oldTitles[slug]) {
     html = html.replaceAll(oldTitles[slug], heading);
     html = html.replaceAll('"Web Design"', JSON.stringify(category));
   }
   html = html.replace(/<style id="portfolio-first-paint">[^]*?<\/style>/g, '');
-  const firstPaint = '<style id="portfolio-first-paint">.framer-14c157h{opacity:1!important;transform:none!important;height:auto!important;overflow:visible!important}.framer-lpu82n,.framer-29zcyb{opacity:1!important;transform:none!important}</style>';
+  const firstPaint = '<style id="portfolio-first-paint">.framer-14c157h{opacity:1!important;transform:none!important;height:auto!important;overflow:visible!important}.framer-lpu82n,.framer-29zcyb{opacity:1!important;transform:none!important}.framer-1rmskto,.framer-167h8yd{align-items:center!important;text-align:center!important}.framer-lyxmbh{display:none!important}.framer-aw1ene h1,.framer-29zcyb p{--framer-text-alignment:center!important;text-align:center!important}</style>';
   html = html.replace('</head>', firstPaint + '\n</head>');
   const version = require('node:crypto').createHash('sha256').update(runtime).digest('hex').slice(0, 10);
   html = html.replace(/src="\/web-project-cards\.js(?:\?[^" ]*)?"/, 'src="/web-project-cards.js?v=' + version + '"');

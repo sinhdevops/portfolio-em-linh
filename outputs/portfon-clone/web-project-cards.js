@@ -34,7 +34,7 @@
       "Legal Services",
       "UI/UX"
     ],
-    "image": "website-design-duong-gia.jpg",
+    "image": "website-design-duong-gia.webp",
     "url": "https://luatduonggia.com/dang-ky-doanh-nghiep/",
     "theme": "legal",
     "caption": "Legal services"
@@ -60,7 +60,7 @@
       "E-commerce",
       "Wine & Lifestyle"
     ],
-    "image": "project-viora-wine.webp",
+    "image": "viora-wine-mockup.webp",
     "url": "https://www.viorawine.com/",
     "theme": "wine",
     "caption": "E-commerce experience"
@@ -75,6 +75,8 @@
     ],
     "image": "project-game.webp",
     "url": "https://www.behance.net/gallery/240101371/Landing-Page-Game-Website-Design-UIUX-Visual",
+    "previewOnly": true,
+    "gallery": ["game-landing-cover.webp", "game-landing-full-page.webp"],
     "caseStudy": true,
     "theme": "gaming",
     "caption": "Gaming experience"
@@ -97,7 +99,7 @@
   const pages = {
     "aether-mobile-experience": {
   "category": "App Design",
-  "title": "Thoughtful Apps. Everyday Experiences.",
+  "title": "App Design",
   "description": "Designing intuitive mobile experiences that bring clarity to everyday moments. Explore apps for better sleep, food ordering, music discovery, and community learning — each shaped around clear navigation, thoughtful interfaces, and meaningful user needs.",
   "projects": [
     {
@@ -108,8 +110,10 @@
         "Sleep & Wellness",
         "UI/UX"
       ],
-      "image": "app-design-sleepifi.png",
+      "image": "app-design-sleepifi.webp",
       "url": "https://www.behance.net/gallery/242742765/Sleep-Tracker-Recording-Analyzing-Snoring",
+      "previewOnly": true,
+      "gallery": ["snooz-cover.webp", "snooz-about.webp", "snooz-logo.webp", "snooz-onboarding.webp", "snooz-main-screens.webp", "snooz-thank-you.webp"],
       "theme": "sleep app",
       "caption": "Sleep & wellbeing",
       "caseStudy": true
@@ -122,8 +126,10 @@
         "Food Delivery",
         "UI/UX"
       ],
-      "image": "app-design-pizza-v3.png",
+      "image": "app-design-pizza-v3.webp",
       "url": "https://www.behance.net/gallery/231547185/UI-App-Design-Pizza-Ordering-App",
+      "previewOnly": true,
+      "gallery": ["pizza-cover.webp", "pizza-about.webp", "pizza-login.webp", "pizza-home.webp", "pizza-product.webp", "pizza-order.webp", "pizza-account.webp", "pizza-thank-you.webp"],
       "theme": "pizza app",
       "caption": "Food & everyday convenience",
       "caseStudy": true
@@ -138,6 +144,8 @@
       ],
       "image": "app-design-music.webp",
       "url": "https://www.behance.net/gallery/173941373/Music-App-UXUI-Designer",
+      "previewOnly": true,
+      "gallery": ["music-app-overview.webp"],
       "theme": "music app",
       "caption": "Music discovery & listening",
       "caseStudy": true
@@ -150,7 +158,7 @@
         "E-learning",
         "Community"
       ],
-      "image": "app-design-sofinhub.png",
+      "image": "app-design-sofinhub.webp",
       "url": "https://www.figma.com/design/m1Ugq1du8Kf5JYB7Cpr0j6/Sofin-HUB?node-id=0-1&t=JCJ6RbD6H4POtEN8-1",
       "theme": "courses app",
       "caption": "Community-powered learning",
@@ -159,17 +167,27 @@
   ]
 },
     'virex-marketing-website': {
-      category: 'Design System', title: 'Consistent Design. Scalable Experiences.',
+      category: 'Design System', title: 'Design System',
       description: 'Building cohesive digital experiences through reusable components, clear visual foundations, and thoughtful interaction patterns. Explore a design system that brings consistency to complex dashboards and helps teams design with confidence.',
-      projects: [{ name: 'Analytic Dashboard – Design System', description: 'A cohesive dashboard design system with reusable interface components, structured layouts, and a consistent visual language across analytics, messaging, and account flows.', tags: ['Design System', 'Dashboard', 'Figma'], image: 'design-system-dashboard-mylink.jpg', url: 'https://www.behance.net/gallery/226186085/Design-System-UIUX', theme: 'system', caption: 'Scalable UI foundations', caseStudy: true }]
+      projects: [{ name: 'Analytic Dashboard – Design System', description: 'A cohesive dashboard design system with reusable interface components, structured layouts, and a consistent visual language across analytics, messaging, and account flows.', tags: ['Design System', 'Dashboard', 'Figma'], image: 'design-system-dashboard-mylink.jpg', url: 'https://www.behance.net/gallery/226186085/Design-System-UIUX', theme: 'system', caption: 'Scalable UI foundations', caseStudy: true },
+        { name: 'Antidetect – Browser Profile Manager', description: 'A dashboard for managing many browser profiles in one place: profiles, groups, proxies and extensions, with clear status counts, quick actions and team features built on a consistent design system.', tags: ['Design System', 'Dashboard', 'Tool'], image: 'antidetect-soaff.webp', theme: 'system', caption: 'Multi-profile browser tool', previewOnly: true }]
     },
     'nova-saas-platform': {
-      category: 'AI Film Creation Tools', title: 'Simplifying the Art of AI Filmmaking.',
+      category: 'AI Film Creation Tools', title: 'AI Film Creation Tools',
       description: 'Designing intuitive tools that make complex creative workflows easier to navigate. From project organisation to characters, scenes, and visual storytelling, every interface supports a clearer, more focused filmmaking experience.',
-      projects: [{ name: 'Microdrama AI Studio', description: 'An AI filmmaking workspace bringing projects, characters, and scenes together in a clear dashboard, helping creators organise their stories and move through production with confidence.', tags: ['Product Design', 'AI Filmmaking', 'UI/UX'], image: 'ai-film-creation.png', theme: 'film', caption: 'Creative tools & storytelling', previewOnly: true }]
+      projects: [{ name: 'Microdrama AI Studio', description: 'An AI filmmaking workspace bringing projects, characters, and scenes together in a clear dashboard, helping creators organise their stories and move through production with confidence.', tags: ['Product Design', 'AI Filmmaking', 'UI/UX'], image: 'ai-film-creation.webp', theme: 'film', caption: 'Creative tools & storytelling', previewOnly: true },
+        { name: 'Tool MV BeatFrame', description: 'An automatic music video creation tool that turns a song into a beat-synced MV: scenes, lyrics, subtitles and visuals laid out on one timeline, ready to export.', tags: ['Personal Project', 'AI Video', 'UI/UX', 'Development'], image: 'beatframe-mv-tool.webp', theme: 'film beat', caption: 'Beat-synced music videos', previewOnly: true,
+          video: 'https://drive.google.com/file/d/12rwoaDGAubW63P2mCilF2zivWqHX-yzY/preview',
+          details: [
+            'BeatFrame is a tool that automatically creates music videos. Drop in a song and it analyses the beat, splits the track into scenes (intro, verse, chorus), generates a clip for each scene and places lyrics, subtitles and visuals on a timeline synced to the rhythm.',
+            'From there the MV can be fine-tuned in an editor: a scene library, storyboard and post-production panels, style and text controls, and export in both 16:9 and 9:16 formats.',
+          ],
+          roles: ['Came up with the idea and wrote the concept and script', 'Designed the full UI/UX, from user flow to final interface', 'Built the project end to end in code', 'Tested and produced the demo myself'] }]
     }
   };
-  const slug = location.pathname.split('/').filter(Boolean).pop();
+  const slugAliases = {'web-design':'lumora-beauty-rebrand','app-design':'aether-mobile-experience','design-system':'virex-marketing-website','ai-film-creation-tools':'nova-saas-platform'};
+  const rawSlug = location.pathname.split('/').filter(Boolean).pop();
+  const slug = slugAliases[rawSlug] || rawSlug;
   const page = pages[slug];
   const projects = page ? page.projects : webProjects;
   const styles = `
@@ -194,8 +212,17 @@
     .system .browser-bar,.film .browser-bar { display:none; }
     .system .screen,.film .screen { border-radius:7px; }
     .system .screen img,.film .screen img { object-fit:cover; object-position:center; }
+    .preview.beat { --accent:#ff7a3d; --base:#1a1416; --glow:#7a2d14; }
+    dialog .video { position:relative; aspect-ratio:16/9; margin:16px 0; border-radius:12px; overflow:hidden; background:#000; }
+    dialog .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+    dialog p + p { margin-top:10px; }
+    dialog .gallery { display:flex; flex-direction:column; gap:12px; margin:16px 0; }
+    dialog .gallery img { margin:0; border-radius:12px; background:#101018; }
+    dialog h3 { margin:18px 0 8px; font-size:15px; }
+    dialog ul { margin:0; padding-left:18px; font-size:13px; line-height:1.6; color:#474747; }
     dialog { width:min(960px,92vw); max-height:90vh; padding:24px; border:1px solid #d9dce6; border-radius:20px; background:#f4f5f9; color:#101010; }
     dialog::backdrop { background:#101525b8; }
+    dialog { overflow-y:auto; overscroll-behavior:contain; }
     dialog img { display:block; width:100%; height:auto; border-radius:12px; margin:16px 0; }
     .close-preview { display:block; margin-left:auto; padding:8px 12px; border:1px solid #d9dce6; border-radius:24px; background:white; cursor:pointer; }
     .preview.sofin { --accent:#73a4ff; --base:#10182d; --glow:#284a78; }
@@ -236,8 +263,20 @@
     .project-link:focus-visible { outline:2px solid #4e61ff; outline-offset:4px; border-radius:4px; }
     @media(max-width:600px) { .projects { grid-template-columns:1fr; gap:20px; } h2 { font-size:19px; } .content { padding:16px; } }
     @media(prefers-reduced-motion:no-preference) { article { transition:box-shadow .2s; } article:hover { box-shadow:0 8px 24px #18254212; } }
+    /* plain-preview: show only the project image, full-bleed, without device mockup or overlay text. */
+    .preview { aspect-ratio:1.65 !important; }
+    .scene-label,.scene-number,.browser-bar,.wine-label { display:none !important; }
+    .preview::before,.preview::after { display:none !important; }
+    .preview .device { position:absolute !important; inset:0 !important; width:100% !important; left:0 !important; top:0 !important; padding:0 !important; border:0 !important; border-radius:0 !important; background:transparent !important; box-shadow:none !important; transform:none !important; }
+    .preview .screen { position:absolute !important; inset:0 !important; aspect-ratio:auto !important; border-radius:0 !important; background:transparent !important; box-shadow:none !important; }
+    .preview .screen img { position:static !important; width:100% !important; height:100% !important; max-width:100% !important; object-fit:cover !important; object-position:center top !important; }
+    @media(hover:hover) and (prefers-reduced-motion:no-preference) { .preview img { transition:transform .45s cubic-bezier(.2,.7,.3,1); } .preview:hover img { transform:scale(1.03); } }
   `;
   function mount() {
+    if (!page && slug === 'lumora-beauty-rebrand') {
+      const heading = document.querySelector('.framer-aw1ene h1');
+      if (heading && heading.textContent !== 'Web Design') heading.textContent = 'Web Design';
+    }
     if (page) {
       const heading = document.querySelector('.framer-aw1ene h1');
       const description = document.querySelector('.framer-29zcyb p');
@@ -245,7 +284,7 @@
       if (heading && heading.textContent !== page.title) heading.textContent = page.title;
       if (description && description.textContent !== page.description) description.textContent = page.description;
       if (category && category.textContent !== page.category) category.textContent = page.category;
-      const title = page.category + ' – MyLink';
+      const title = 'MyLink - Portfolio UIUX Design';
       if (document.title !== title) document.title = title;
     }
     const host = document.querySelector('.framer-14c157h');
@@ -256,16 +295,39 @@
     host.style.setProperty('overflow', 'visible', 'important');
     const root = host.shadowRoot || host.attachShadow({ mode:'open' });
     host.dataset.cardsInitialized = 'true';
-    if (!root.querySelector('.projects')) root.innerHTML = `<style>${styles}</style><section class="projects" aria-label="${page ? page.category + ' projects' : 'Website design projects'}">${projects.map((p,index) => `<article><a class="preview ${p.theme}" href="${p.url || '/assets/images/' + p.image}" ${p.previewOnly ? 'data-preview="true"' : ''} target="_blank" rel="noopener noreferrer" aria-label="Open ${p.name}${p.previewOnly ? " (opens project preview)" : " (opens in a new tab)"}"><span class="scene-label">${p.caption}</span><span class="scene-number">0${index+1} / SELECTED WORK</span><div class="device"><div class="browser-bar" aria-hidden="true"><i class="browser-dot"></i><i class="browser-dot"></i><i class="browser-dot"></i><span class="browser-url">${p.url ? new URL(p.url).hostname.replace("www.","") : "Microdrama AI Studio"}</span></div><div class="screen"><img src="/assets/images/${p.image}" alt="${p.name} project mockup" loading="lazy" decoding="async">${p.theme === "wine" ? '<span class="wine-label">VIORA WINE</span>' : ""}</div></div></a><div class="content"><h2>${p.name}</h2><p>${p.description}</p><div class="bottom"><div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div><a class="project-link" href="${p.url || '/assets/images/' + p.image}" ${p.previewOnly ? 'data-preview="true"' : ''} target="_blank" rel="noopener noreferrer" aria-label="See details: ${p.name}${p.previewOnly ? " (opens project preview)" : " (opens in a new tab)"}">See details <span aria-hidden="true">↗</span></a></div></div></article>`).join('')}</section>`;
-    if (projects.some(p => p.previewOnly)) {
-      const project = projects.find(p => p.previewOnly);
+    if (!root.querySelector('.projects')) root.innerHTML = `<style>${styles}</style><section class="projects" aria-label="${page ? page.category + ' projects' : 'Website design projects'}">${projects.map((p,index) => `<article><a class="preview ${p.theme}" href="${p.url || '/assets/images/' + p.image}" ${p.previewOnly ? 'data-preview="' + index + '"' : ''} target="_blank" rel="noopener noreferrer" aria-label="Open ${p.name}${p.previewOnly ? " (opens project preview)" : " (opens in a new tab)"}"><span class="scene-label">${p.caption}</span><span class="scene-number">0${index+1} / SELECTED WORK</span><div class="device"><div class="browser-bar" aria-hidden="true"><i class="browser-dot"></i><i class="browser-dot"></i><i class="browser-dot"></i><span class="browser-url">${p.url ? new URL(p.url).hostname.replace("www.","") : "Microdrama AI Studio"}</span></div><div class="screen"><img src="/assets/images/${p.image}" alt="${p.name} project mockup" loading="lazy" decoding="async">${p.theme === "wine" ? '<span class="wine-label">VIORA WINE</span>' : ""}</div></div></a><div class="content"><h2>${p.name}</h2><p>${p.description}</p><div class="bottom"><div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div><a class="project-link" href="${p.url || '/assets/images/' + p.image}" ${p.previewOnly ? 'data-preview="' + index + '"' : ''} target="_blank" rel="noopener noreferrer" aria-label="See details: ${p.name}${p.previewOnly ? " (opens project preview)" : " (opens in a new tab)"}">See details <span aria-hidden="true">↗</span></a></div></div></article>`).join('')}</section>`;
+    // One details dialog per preview-only project; links carry the project's index.
+    projects.forEach((project, index) => {
+      if (!project.previewOnly) return;
       const dialog = document.createElement('dialog');
       dialog.setAttribute('aria-label', project.name + ' details');
-      dialog.innerHTML = '<button class="close-preview" type="button" aria-label="Close project details">Close ✕</button><h2>' + project.name + '</h2><img src="/assets/images/' + project.image + '" alt="' + project.name + ' full project preview"><p>' + project.description + '</p>';
+      const media = project.gallery
+        ? '<div class="gallery">' + project.gallery.map((img, i) => '<img src="/assets/images/' + img + '" alt="' + project.name + ' case study ' + (i + 1) + '" loading="lazy" decoding="async">').join('') + '</div>'
+        : project.video
+        ? '<div class="video"><iframe src="about:blank" data-src="' + project.video + '" title="' + project.name + ' demo video" allow="autoplay; fullscreen" allowfullscreen></iframe></div>'
+        : '<img src="/assets/images/' + project.image + '" alt="' + project.name + ' full project preview">';
+      const body = project.details
+        ? project.details.map(text => '<p>' + text + '</p>').join('') + (project.roles ? '<h3>My role</h3><ul>' + project.roles.map(r => '<li>' + r + '</li>').join('') + '</ul>' : '')
+        : '<p>' + project.description + '</p>';
+      dialog.innerHTML = '<button class="close-preview" type="button" aria-label="Close project details">Close ✕</button><h2>' + project.name + '</h2>' + media + body;
+      dialog.setAttribute('data-lenis-prevent', '');
       root.append(dialog);
-      root.querySelectorAll('[data-preview]').forEach(link => link.addEventListener('click', event => { event.preventDefault(); dialog.showModal(); }));
+      // The site's smooth-scroll (Lenis) listens on window and would scroll the page
+      // behind the dialog; keep wheel/touch scrolling inside the dialog instead.
+      ['wheel', 'touchmove'].forEach(type => dialog.addEventListener(type, event => event.stopPropagation(), { passive: true }));
+      const frame = dialog.querySelector('iframe');
+      root.querySelectorAll('[data-preview="' + index + '"]').forEach(link => link.addEventListener('click', event => {
+        event.preventDefault();
+        if (frame) frame.src = frame.dataset.src; // load the video only when opened
+        document.documentElement.style.overflow = 'hidden'; // lock the page behind
+        dialog.showModal();
+      }));
       dialog.querySelector('button').addEventListener('click', () => dialog.close());
-    }
+      dialog.addEventListener('close', () => {
+        document.documentElement.style.overflow = '';
+        if (frame) frame.src = 'about:blank'; // stop playback
+      });
+    });
   }
   mount();
   new MutationObserver(mount).observe(document.getElementById('main') || document.body, {childList:true,subtree:true});

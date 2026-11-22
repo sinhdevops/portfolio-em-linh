@@ -7,6 +7,20 @@
       "includeFiles": "outputs/portfon-clone/**"
     }
   },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+    },
+    {
+      "source": "/((?!assets/|api/)[^.]*)",
+      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
+    }
+  ],
   "rewrites": [
     {
       "source": "/assets/images/:path*",
@@ -33,12 +47,38 @@
       "destination": "/my-portfolio/:slug/index.html"
     },
     {
+      "source": "/experience",
+      "destination": "/experience/index.html"
+    },
+    {
       "source": "/blogs",
       "destination": "/blogs/index.html"
     },
     {
       "source": "/blogs/:slug",
       "destination": "/blogs/:slug/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/my-portfolio/lumora-beauty-rebrand",
+      "destination": "/my-portfolio/web-design",
+      "permanent": true
+    },
+    {
+      "source": "/my-portfolio/aether-mobile-experience",
+      "destination": "/my-portfolio/app-design",
+      "permanent": true
+    },
+    {
+      "source": "/my-portfolio/virex-marketing-website",
+      "destination": "/my-portfolio/design-system",
+      "permanent": true
+    },
+    {
+      "source": "/my-portfolio/nova-saas-platform",
+      "destination": "/my-portfolio/ai-film-creation-tools",
+      "permanent": true
     }
   ]
 }
