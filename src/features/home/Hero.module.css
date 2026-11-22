@@ -1,0 +1,176 @@
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 180px var(--gutter) 30px;
+  overflow: clip;
+  background: var(--color-hero);
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 192px;
+  width: 100%;
+  max-width: var(--container);
+}
+
+/* Huge faded word behind the portrait. */
+.backdropWord p {
+  color: rgb(255 255 255 / 0.8);
+  font-size: 232px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  white-space: pre;
+}
+
+.backdropWord span {
+  display: inline-block;
+  margin: -0.125em;
+  padding: 0.125em;
+  background-image: linear-gradient(0deg, rgb(255 255 255 / 0) 24%, rgb(255 255 255 / 0.8) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Arched portrait, anchored to the bottom of the section. */
+.portrait {
+  position: absolute;
+  top: -20.6px;
+  bottom: -30px;
+  left: 50%;
+  aspect-ratio: 0.782164;
+  translate: -50% 0;
+  overflow: hidden;
+  border-radius: 300px 300px 0 0;
+  background: linear-gradient(180deg, var(--color-primary) 0%, #dfe0eb 100%);
+}
+
+.portrait img {
+  object-fit: cover;
+}
+
+.textWrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.titleWrapper {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.greeting {
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30.6px;
+  white-space: pre;
+}
+
+.title {
+  max-width: 521px;
+  color: var(--color-ink);
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+/* Soft blurred band that fades the bottom of the portrait into the text. */
+.overlay {
+  position: absolute;
+  top: 20px;
+  left: -123px;
+  right: -127.8px;
+  bottom: -103.2px;
+  z-index: 2;
+  background: var(--color-hero);
+  filter: blur(25px);
+}
+
+@media (max-width: 1199.98px) {
+  .hero {
+    padding-top: 150px;
+  }
+
+  .content {
+    gap: 229px;
+  }
+
+  .backdropWord p {
+    font-size: 144px;
+  }
+
+  .portrait {
+    top: 55.5px;
+  }
+
+  .title {
+    font-size: 64px;
+  }
+
+  .overlay {
+    left: 0;
+    right: 0;
+    bottom: -108px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    min-height: 660px;
+    padding: 130px var(--gutter) 30px;
+  }
+
+  .content {
+    justify-content: space-between;
+    gap: 0;
+    min-height: 500px;
+  }
+
+  .backdropWord p {
+    font-size: 72px;
+  }
+
+  .portrait {
+    top: auto;
+    bottom: 40px;
+    width: min(82vw, 320px);
+  }
+
+  .textWrapper {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .titleWrapper {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .overlay {
+    left: -29px;
+    right: -48px;
+    bottom: -75.8px;
+  }
+}

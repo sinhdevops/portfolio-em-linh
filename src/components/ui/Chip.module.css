@@ -1,0 +1,15 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  padding: 4px 24px;
+  border-radius: 50px;
+  background: var(--color-chip);
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 23.8px;
+  letter-spacing: -0.28px;
+  white-space: pre;
+}

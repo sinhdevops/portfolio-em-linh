@@ -1,0 +1,17 @@
+.number {
+  position: relative;
+  display: inline-block;
+  font-feature-settings:
+    'zero' on,
+    'tnum' on;
+  text-align: center;
+}
+
+.sizer {
+  visibility: hidden;
+}
+
+.live {
+  position: absolute;
+  inset: 0;
+}

@@ -1,0 +1,73 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+
+.heading {
+  font: inherit;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  padding: 24px;
+  text-align: left;
+}
+
+.question {
+  color: var(--color-ink);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30.6px;
+}
+
+.icon {
+  position: relative;
+  flex: none;
+  width: 24px;
+  height: 24px;
+}
+
+.lineHorizontal,
+.lineVertical {
+  position: absolute;
+  top: 5px;
+  left: 11px;
+  width: 2px;
+  height: 14px;
+  background: var(--color-black);
+  transition: rotate 0.3s var(--ease-framer);
+}
+
+.lineHorizontal {
+  rotate: -90deg;
+}
+
+.item[data-open='true'] .lineVertical {
+  rotate: 90deg;
+}
+
+.panel {
+  overflow: hidden;
+}
+
+/* The panel is pulled up 12px so the gap below the question is 12px, not 24px. */
+.answer {
+  max-width: 447px;
+  padding: 0 24px 24px;
+  box-sizing: content-box;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 27.2px;
+  text-wrap: balance;
+}

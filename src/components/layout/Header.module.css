@@ -1,0 +1,126 @@
+.header {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--gutter);
+}
+
+.desktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container);
+}
+
+.logo {
+  display: block;
+  flex: none;
+  width: 150px;
+  height: 52px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.links {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 24px 0 24px;
+}
+
+.link {
+  display: block;
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 27.2px;
+  white-space: pre;
+}
+
+.mobile {
+  display: none;
+}
+
+/* Tablet & phone: fixed white bar with a menu toggle. */
+@media (max-width: 1199.98px) {
+  .header {
+    position: fixed;
+    top: 0;
+    padding: 0;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+    background: var(--color-white);
+  }
+
+  .mobileBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menuButton {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 64px;
+    background: var(--color-white);
+  }
+
+  .menuButton span {
+    position: absolute;
+    left: 10.5px;
+    right: 10.5px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--color-ink);
+  }
+
+  .menuButton span:nth-child(1) {
+    top: 14px;
+  }
+
+  .menuButton span:nth-child(2) {
+    top: 19px;
+  }
+
+  .menuButton span:nth-child(3) {
+    top: 24px;
+  }
+
+  .mobileLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    overflow: hidden;
+  }
+
+  .mobileLinks li:first-child {
+    margin-top: 48px;
+  }
+
+  /* 40px list padding + 120px menu padding, minus the bar's own 16px. */
+  .mobileLinks li:last-child {
+    margin-bottom: 144px;
+  }
+}

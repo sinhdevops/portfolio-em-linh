@@ -1,0 +1,26 @@
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: max-content;
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 27.2px;
+  white-space: pre;
+}
+
+.mark {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  color: var(--color-primary);
+}
+
+.onDark {
+  color: var(--color-page);
+}
+
+.onDark .mark {
+  color: var(--color-white);
+}

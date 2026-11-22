@@ -1,0 +1,34 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border: 1px solid rgb(16 16 16 / 0.3);
+  border-radius: 55px;
+  background: rgb(255 255 255 / 0.8);
+  color: var(--color-ink);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.cursor[data-visible='false'] {
+  visibility: hidden;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :global([data-cursor='view']),
+  :global([data-cursor='view'] *) {
+    cursor: none;
+  }
+}

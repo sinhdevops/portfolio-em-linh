@@ -1,0 +1,39 @@
+/*
+ * Design tokens. Values mirror the original site exactly.
+ * Breakpoints: desktop >= 1200px, tablet 768–1199.98px, phone <= 767.98px.
+ */
+:root {
+  /* Colours */
+  --color-ink: #101010;
+  --color-black: #000000;
+  --color-text: #474747;
+  --color-white: #ffffff;
+  --color-page: #e9ecf3;
+  --color-surface: #f6f7fa;
+  --color-hero: #c7ccd8;
+  --color-chip: #e9ecf3;
+  --color-primary: #3458ff;
+  --color-navy: #03236d;
+  --color-star: #ffc036;
+  --color-muted-number: rgb(0 0 0 / 0.1);
+
+  /* Typography */
+  --font-display: 'Inter Display', 'Inter Display Fallback', sans-serif;
+  --font-text: 'Inter', 'Inter Fallback', sans-serif;
+  --font-features: 'blwf', 'cv03', 'cv04', 'cv09', 'cv11';
+
+  /* Layout */
+  --container: 1140px;
+  --gutter: 30px;
+  --radius-card: 20px;
+  --radius-pill: 40px;
+
+  /* Motion (cubic-bezier used throughout the original animations) */
+  --ease-framer: cubic-bezier(0.44, 0, 0.56, 1);
+}
+
+@media (max-width: 767.98px) {
+  :root {
+    --gutter: 20px;
+  }
+}
